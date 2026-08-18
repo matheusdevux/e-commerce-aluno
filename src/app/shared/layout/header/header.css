@@ -1,12 +1,40 @@
 mat-toolbar {
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .flex-spacer {
-flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 button {
- margin-left: 8px;
+    margin-left: 8px;
+}
+
+.email-usuario{
+    font-size:16px;
+    color: #ffa500;
+    margin: 10px;
+}
+
+.teste{
+    background-color: #760079;
+    color: #fff;
+    font-weight: bold;
+}
+.teste button {
+ color:#fff;
+}
+button:hover{
+    background-color: #c000c5;
+}
+
+.teste2:hover{
+    background-color: #760079;
+}
+.teste2{
+    font-size: 25px;
+     font-weight: bold;
+     border-radius: 0px;
+     padding: 20px;
 }
