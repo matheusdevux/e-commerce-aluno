@@ -6,7 +6,7 @@ import { PrecoFormatadoPipe } from '../../../shared/pipes/preco-formatado-pipe';
 import { effect } from '@angular/core';
 import { produtosService } from '../../../core/services/produtos.service';
 import { inject } from '@angular/core';
-import { CarrinhoService } from '../../../core/services/carrinho.service';
+import { CarrinhoFacade } from '../../../core/facades/carrinho.facade';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -85,7 +85,7 @@ export class ListaProdutos {
   }
 
    adicionarAoCarrinho(produto:{nome: string; preco: number}){
-    this.carrinhoService.adicionar(produto);
+    this.carrinhoFacade.adicionarProdutoCarrinho(produto);
    }
 
 //?================ MÉTODO SET() ======================
@@ -110,9 +110,9 @@ export class ListaProdutos {
 //** ================ INJECT ======================
 
 private produtosService = inject(produtosService);
-public carrinhoService = inject(CarrinhoService);
+public carrinhoFacade = inject(CarrinhoFacade);
 
-quantidadeCarrinho = this.carrinhoService.quantidadeItens;
-totalCarrinho = this.carrinhoService.totalItens;
+quantidadeCarrinho = this.carrinhoFacade.quantidadeCarrinho;
+totalCarrinho = this.carrinhoFacade.totalCarrinho;
 
 }
