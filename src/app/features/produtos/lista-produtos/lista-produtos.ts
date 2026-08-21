@@ -7,6 +7,7 @@ import { effect } from '@angular/core';
 import { produtosService } from '../../../core/services/produtos.service';
 import { inject } from '@angular/core';
 import { CarrinhoFacade } from '../../../core/facades/carrinho.facade';
+import { ItemCarrinho } from '../../../core/models/item-carrinho';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -84,7 +85,7 @@ export class ListaProdutos {
     ]);
   }
 
-   adicionarAoCarrinho(produto:{nome: string; preco: number}){
+   adicionarAoCarrinho(produto:ItemCarrinho){
     this.carrinhoFacade.adicionarProdutoCarrinho(produto);
    }
 
